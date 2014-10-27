@@ -35,6 +35,11 @@ MIT
 * Markdown parsing done by remarkable: <https://github.com/jonschlinkert/remarkable>
 * Markdown spec defined by CommonMark: <http://commonmark.org>
 
+## Coming Soon
+
+- [ ] Remarkable options for type.
+- [ ] Remarkable options for highlight.js.
+
 ## Contributing
 
 1. Fork it
