@@ -19,7 +19,7 @@ var gulp = require('gulp'),
 gulp.task('md', function() {
   return gulp.src('file.md')
     .pipe(md())
-    .pipe(rename('file.html'))
+    .pipe(name('file.html'))
     .pipe(gulp.dest('dist'));
 });
 
