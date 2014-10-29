@@ -4,7 +4,7 @@
   "description": "A gulp wrapper for the remarkable CommonMark parser.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,9 @@
   "dependencies": {
     "remarkable": "^1.2.0",
     "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "gulp-util": "^3.0.1",
+    "mocha": "^2.0.1"
   }
 }
