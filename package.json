@@ -26,6 +26,7 @@
   "homepage": "https://github.com/johnotander/gulp-remarkable",
   "dependencies": {
     "gulp-util": "^3.0.1",
+    "highlight.js": "^8.3.0",
     "remarkable": "^1.2.0",
     "through2": "^0.6.3"
   },

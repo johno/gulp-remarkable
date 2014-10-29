@@ -36,11 +36,12 @@ MIT
 
 * Markdown parsing done by remarkable: <https://github.com/jonschlinkert/remarkable>
 * Markdown spec defined by CommonMark: <http://commonmark.org>
+* Test script adapted from: <https://github.com/sindresorhus/gulp-markdown/blob/master/test.js>
 
 ## Coming Soon
 
 - [ ] Remarkable options for type.
-- [ ] Remarkable options for highlight.js.
+- [X] Remarkable options for highlight.js.
 
 ## Contributing
 
