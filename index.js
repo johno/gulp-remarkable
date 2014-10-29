@@ -1,7 +1,8 @@
 'use strict';
 
-var through     = require('through2');
-var remarkable  = require('remarkable');
+var through    = require('through2'),
+    gutil      = require('gulp-util'),
+    remarkable = require('remarkable');
 
 module.exports = function(options) {
   return through.obj(function(file, encoding, callback) {
@@ -14,6 +15,7 @@ module.exports = function(options) {
     var html = md.render(src);
 
     file.contents = new Buffer(html);
+    file.path = gutil.replaceExtension(file.path, '.html');
     this.push(file);
     callback();
   });

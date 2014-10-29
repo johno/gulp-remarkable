@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/johnotander/gulp-remarkable",
   "dependencies": {
+    "gulp-util": "^3.0.1",
     "remarkable": "^1.2.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {
-    "gulp-util": "^3.0.1",
     "mocha": "^2.0.1"
   }
 }

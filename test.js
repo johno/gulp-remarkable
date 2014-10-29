@@ -9,13 +9,14 @@ it('should convert md to html', function(cb) {
   var stream = remark();
 
   stream.once('data', function(file) {
+    assert.equal(file.relative, 'test.html');
     assert.equal(file.contents.toString(), '<h1>Hello, world!</h1>\n');
   });
 
   stream.on('end', cb);
 
   stream.write(new gutil.File({
-    path: 'text.md',
+    path: 'test.md',
     contents: new Buffer('# Hello, world!')
   }));
 
