@@ -1,5 +1,7 @@
 # Gulp Remarkable
 
+[![Build Status](https://travis-ci.org/johnotander/gulp-remarkable.svg?branch=master)](https://travis-ci.org/johnotander/gulp-remarkable)
+
 A [gulp](http://gulpjs.com) wrapper for the [remarkable](https://github.com/jonschlinkert/remarkable)
 [CommonMark](http://commonmark.org) parser.
 
