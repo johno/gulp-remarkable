@@ -10,11 +10,18 @@ module.exports = function(options) {
     if (!file.isBuffer()) {
       callback();
     }
-
+    
     options = options || {};
+    
+    if (!options.preset) {
+        options.preset = 'full'
+    }
+    var preset = options.preset;
+    delete options.preset;
+    
     options.highlight = options.highlight || highlight;
 
-    var md = new remarkable('full', options);
+    var md = new remarkable(preset, options);
     var src = file.contents.toString();
     var html = md.render(src);
 
