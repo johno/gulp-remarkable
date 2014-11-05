@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "npm install && jshint lib/*.js test/*.js index.js",
-    "test": "npm run lint && mocha",
+    "test": "npm run lint && mocha && gulp test",
     "test-cov": "npm test && istanbul cover _mocha",
     "test-travis": "npm test && istanbul cover _mocha --report lcovonly"
   },
@@ -39,7 +39,11 @@
     "istanbul": "*",
     "jshint": "*",
     "mocha": ">=2",
-    "mocha-lcov-reporter": "*"
+    "mocha-lcov-reporter": "*",
+    "gulp": ">=3.8.10",
+    "gulp-jshint": ">=1.9.0",
+    "jshint-stylish": ">=1.0.0",
+    "gulp-spawn-mocha": ">=0.5.1"
   },
   "licenses": [{
     "type": "MIT",
