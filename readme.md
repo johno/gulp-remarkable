@@ -18,7 +18,7 @@ $ npm install gulp-remarkable
 
 
 ## Usage
-**default example**
+**Default Example**
 ```js
 var gulp = require('gulp'),
     name = require('gulp-rename'),
@@ -34,7 +34,7 @@ gulp.task('md', function() {
 gulp.task('default', ['md']);
 ```
 
-**extended example**
+**Extended Example**
 ```js
 var gulp = require('gulp'),
     name = require('gulp-rename'),
@@ -86,6 +86,20 @@ $ npm test
 ## License [![MIT license][license-img]][license-url]
 Copyright (c) 2014 [John Otander][author-website], [contributors](https://github.com/johnotander/gulp-remarkable/graphs/contributors).  
 Released under the [`MIT`][license-url] license.
+
+
+## Acknowledgements
+* Markdown parsing done by remarkable: <https://github.com/jonschlinkert/remarkable>
+* Markdown spec defined by CommonMark: <http://commonmark.org>
+* Test script adapted from: <https://github.com/sindresorhus/gulp-markdown/blob/master/test.js>
+
+
+## Contributing
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 
 

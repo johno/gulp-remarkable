@@ -1,7 +1,7 @@
 {
   "name": "gulp-remarkable",
   "version": "1.0.1",
-  "description": "Gulp plugin for Remarkable - Markdown parser done right. Fast and easy to extend. Support CommonMark.",
+  "description": "Gulp plugin for Remarkable - Markdown parser done right. Fast and easy to extend. Supports CommonMark.",
   "main": "index.js",
   "scripts": {
     "lint": "npm install && jshint lib/*.js test/*.js index.js",

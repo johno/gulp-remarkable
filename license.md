@@ -1,4 +1,4 @@
-Copyright (c) 2014 [Charlike Mike Reagent][author-website], [contributors](https://github.com/tunnckoCore/coreflow-templates/graphs/contributors).  
+Copyright (c) 2014 [John Otander][author-website], [contributors](https://github.com/johnotander/gulp-remarkable/graphs/contributors).  
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
