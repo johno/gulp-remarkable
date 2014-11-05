@@ -3,13 +3,15 @@
 > [Gulp](http://gulpjs.com) plugin for [Remarkable][remarkable-url] - Markdown parser done right.  
 Fast and easy to extend. Supports [CommonMark][commonmark-url].
 
-## Install [![Nodei.co stats][npmjs-install]][npmjs-url]
+## Install
 
 > Install with [npm](https://npmjs.org)
 
 ```
 $ npm install gulp-remarkable
 ```
+
+See [gulp-remarkable on npm][npmjs-url].
 
 
 ## Options
