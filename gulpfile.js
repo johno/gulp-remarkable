@@ -9,7 +9,7 @@ gulp.task('lint', function () {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('test', function(){
+gulp.task('test', ['lint'], function(){
   return test().on('error', function (e) {
     throw e;
   });
