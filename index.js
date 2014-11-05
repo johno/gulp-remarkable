@@ -1,33 +1,42 @@
 'use strict';
 
-var through    = require('through2'),
-    gutil      = require('gulp-util'),
-    hljs       = require('highlight.js'),
-    remarkable = require('remarkable');
+var through    = require('through2');
+var gutil      = require('gulp-util');
+var hljs       = require('highlight.js');
+var Remarkable = require('remarkable');
 
 module.exports = function(options) {
   return through.obj(function(file, encoding, callback) {
-    if (!file.isBuffer()) {
-      callback();
+    if (file.isNull()) {
+      callback(null, file);
+    }
+
+    if (file.isStream()) {
+      callback(new gutil.PluginError('gulp-remarkable', 'Streaming not supported'));
+      return;
     }
     
-    options = options || {};
-    
-    if (!options.preset) {
-        options.preset = 'full'
+
+    try {
+      options = options || {};
+      options.typographer = options.typographer || {};
+      options.remarkableOptions = options.remarkableOptions || {};
+      options.remarkableOptions.highlight = options.remarkableOptions.highlight || highlight
+
+      var md = new Remarkable(options.preset || 'commonmark', options.remarkableOptions)
+
+      if (options.remarkableOptions.typographer) {
+        md.typographer.set(options.typographer)
+      }
+
+      file.contents = new Buffer(md.render(file.contents.toString()));
+      
+      file.path = gutil.replaceExtension(file.path, '.html');
+      this.push(file);
+    } catch (err) {
+      this.emit('error', new gutil.PluginError('gulp-remarkable', err, {fileName: file.path}));
     }
-    var preset = options.preset;
-    delete options.preset;
-    
-    options.highlight = options.highlight || highlight;
 
-    var md = new remarkable(preset, options);
-    var src = file.contents.toString();
-    var html = md.render(src);
-
-    file.contents = new Buffer(html);
-    file.path = gutil.replaceExtension(file.path, '.html');
-    this.push(file);
     callback();
   });
 };
