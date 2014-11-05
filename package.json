@@ -1,6 +1,6 @@
 {
   "name": "gulp-remarkable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Gulp plugin for Remarkable - Markdown parser done right. Fast and easy to extend. Supports CommonMark.",
   "main": "index.js",
   "scripts": {

@@ -1,8 +1,10 @@
 # gulp-remarkable [![NPM version][npmjs-shields]][npmjs-url] [![Build Status][travis-img]][travis-url] [![Dependency Status][depstat-img]][depstat-url]
+
 > [Gulp](http://gulpjs.com) plugin for [Remarkable][remarkable-url] - Markdown parser done right.  
-Fast and easy to extend. Support [CommonMark][commonmark-url].
+Fast and easy to extend. Supports [CommonMark][commonmark-url].
 
 ## Install [![Nodei.co stats][npmjs-install]][npmjs-url]
+
 > Install with [npm](https://npmjs.org)
 
 ```
@@ -11,6 +13,7 @@ $ npm install gulp-remarkable
 
 
 ## Options
+
 - `remarkableOptions` **{Object}** Options to be passed to Remarkable
 - `typographer` **{Object}** Options to be passed to `md.typographer.set`.
   + to use it, first `remarkableOptions.typographer` must be set to `true`
@@ -18,6 +21,7 @@ $ npm install gulp-remarkable
 
 
 ## Usage
+
 **Default Example**
 ```js
 var gulp = require('gulp'),
@@ -63,12 +67,14 @@ gulp.task('default', ['md']);
 ```
 
 ## Run tests
+
 ```
 $ npm test
 ```
 
 
 ## Authors & Contributors
+
 **John Otander**
 + [github/johnotander][author-github]
 + [twitter/4lpine][author-twitter]
@@ -84,17 +90,20 @@ $ npm test
 
 
 ## License [![MIT license][license-img]][license-url]
+
 Copyright (c) 2014 [John Otander][author-website], [contributors](https://github.com/johnotander/gulp-remarkable/graphs/contributors).  
 Released under the [`MIT`][license-url] license.
 
 
 ## Acknowledgements
+
 * Markdown parsing done by remarkable: <https://github.com/jonschlinkert/remarkable>
 * Markdown spec defined by CommonMark: <http://commonmark.org>
 * Test script adapted from: <https://github.com/sindresorhus/gulp-markdown/blob/master/test.js>
 
 
 ## Contributing
+
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
