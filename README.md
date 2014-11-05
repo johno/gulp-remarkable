@@ -11,8 +11,14 @@ A [gulp](http://gulpjs.com) wrapper for the [remarkable](https://github.com/jons
 npm install --save gulp-remarkable
 ```
 
-## Usage
+## Options
+- `preset` **{String}** Remarkable's preset, default `commonmark`
+- `remarkableOptions` **{Object}** Options to be passed to Remarkable
+- `typographer` **{Object}** Options to be passed to `md.typographer.set`.
+  + `remarkableOptions.typographer` must be enabled to `true`
 
+## Usage
+**default example**
 ```js
 var gulp = require('gulp'),
     name = require('gulp-rename'),
@@ -20,13 +26,42 @@ var gulp = require('gulp'),
 
 gulp.task('md', function() {
   return gulp.src('file.md')
-    .pipe(md())
+    .pipe(md({preset: 'commonmark'}))
     .pipe(name('file.html'))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['md']);
 ```
+
+**extended example**
+```js
+var gulp = require('gulp'),
+    name = require('gulp-rename'),
+    md   = require('gulp-remarkable');
+
+gulp.task('md', function() {
+  return gulp.src('file.md')
+    .pipe(md({
+      preset: 'full',
+      typographer: {
+        copyright:    true, // (c) (C) → ©
+        plusminus:    true, // +- → ±
+        ellipsis:     true, // ... → … (also ?.... → ?.., !.... → !..)
+      },
+      remarkableOptions: {
+        typographer: true,
+        linkify: true,
+        breaks: true
+      }
+    }))
+    .pipe(name('file.html'))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['md']);
+```
+
 
 ## License
 
@@ -37,11 +72,6 @@ MIT
 * Markdown parsing done by remarkable: <https://github.com/jonschlinkert/remarkable>
 * Markdown spec defined by CommonMark: <http://commonmark.org>
 * Test script adapted from: <https://github.com/sindresorhus/gulp-markdown/blob/master/test.js>
-
-## Coming Soon
-
-- [ ] Remarkable options for type.
-- [X] Remarkable options for highlight.js.
 
 ## Contributing
 
