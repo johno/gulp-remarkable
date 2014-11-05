@@ -16,7 +16,8 @@
     "remarkable",
     "parser",
     "markdown",
-    "md"
+    "md",
+    "gulpplugin"
   ],
   "author": "John Otander <johnotander@gmail.com> (http://johnotander.com/)",
   "license": "MIT",
