@@ -1,11 +1,20 @@
+/**
+ * gulp-remarkable <https://github.com/tunnckoCore/gulp-remarkable>
+ *
+ * Copyright (c) 2014 John Otander, contributors.
+ * Released under the MIT license.
+ */
+
 'use strict';
 
-var through    = require('through2');
-var gutil      = require('gulp-util');
-var hljs       = require('highlight.js');
-var Remarkable = require('remarkable');
+/**
+ * Module dependencies.
+ */
+var through = require('through2');
+var gutil = require('gulp-util');
+var gulpRemarkable = require('./lib/gulp-remarkable');
 
-module.exports = function(options) {
+module.exports = function remarkable(options) {
   return through.obj(function(file, encoding, callback) {
     if (file.isNull()) {
       callback(null, file);
@@ -16,18 +25,8 @@ module.exports = function(options) {
       return;
     }
     
-
     try {
-      options = options || {};
-      options.typographer = options.typographer || {};
-      options.remarkableOptions = options.remarkableOptions || {};
-      options.remarkableOptions.highlight = options.remarkableOptions.highlight || highlight
-
-      var md = new Remarkable(options.preset || 'commonmark', options.remarkableOptions)
-
-      if (options.remarkableOptions.typographer) {
-        md.typographer.set(options.typographer)
-      }
+      var md = gulpRemarkable(options)
 
       file.contents = new Buffer(md.render(file.contents.toString()));
       
@@ -40,17 +39,3 @@ module.exports = function(options) {
     callback();
   });
 };
-
-function highlight(str, lang) {
-  if (lang && hljs.getLanguage(lang)) {
-    try {
-      return hljs.highlight(lang, str).value;
-    } catch (err) {}
-  }
-
-  try {
-    return hljs.highlightAuto(str).value;
-  } catch (err) {}
-
-  return '';
-}
