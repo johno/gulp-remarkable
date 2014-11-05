@@ -1,9 +1,18 @@
+/**
+ * gulp-remarkable <https://github.com/tunnckoCore/gulp-remarkable>
+ *
+ * Copyright (c) 2014 John Otander, contributors.
+ * Released under the MIT license.
+ */
+
 'use strict';
 
+/**
+ * Module dependencies.
+ */
 var assert = require('assert');
 var gutil = require('gulp-util');
-var hljs = require('highlight.js');
-var remarkableStream = require('./index');
+var remarkableStream = require('../index');
 
 describe('gulp-remarkable should convert md to html', function() {
   it('with `preset:full`, `typographer:false`', function(done) {
