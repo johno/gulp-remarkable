@@ -1,6 +1,6 @@
-# gulp-remarkable [![NPM version][npmjs-shields]][npmjs-url] [![Build Status][travis-img]][travis-url] [![Dependency Status][depstat-img]][depstat-url]
+# Gulp Remarkable [![NPM version][npmjs-shields]][npmjs-url] [![Build Status][travis-img]][travis-url] [![Dependency Status][depstat-img]][depstat-url]
 
-> [Gulp](http://gulpjs.com) plugin for [Remarkable][remarkable-url] - Markdown parser done right.  
+A [gulp](http://gulpjs.com) plugin for [Remarkable][remarkable-url] - Markdown parser, done right.
 Fast and easy to extend. Supports [CommonMark][commonmark-url].
 
 ## Installation
