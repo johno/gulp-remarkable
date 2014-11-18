@@ -1,7 +1,12 @@
+## v1.1.2 / November 18, 2014
+
+- Update documentation
+- Add remarkable-plugin keyword to `package.json`
+
 ## v1.1.1 / November 18, 2014
 
 - Update to remarkable version 1.4.1
-- Change the default from 'commonmark' to 'full'
+- Change the default from `'commonmark'` to `'full'`
 - Add `disabled` option
 - Change tests for the latest implementation
 - Update documentation
