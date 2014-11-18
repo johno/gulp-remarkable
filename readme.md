@@ -17,9 +17,9 @@ See [gulp-remarkable on npm][npmjs-url].
 ## Options
 
 - `remarkableOptions` **{Object}** Options to be passed to Remarkable
-- `typographer` **{Object}** Options to be passed to `md.typographer.set`.
+- `disable` **[Array]** Options to be passed to `md.core.ruler.disable`
   + to use it, first `remarkableOptions.typographer` must be set to `true`
-- `preset` **{String}** Remarkable's preset, default `commonmark`
+- `preset` **{String}** Remarkable's preset, default `full`
 
 
 ## Usage
@@ -50,11 +50,8 @@ gulp.task('md', function() {
   return gulp.src('file.md')
     .pipe(md({
       preset: 'full',
-      typographer: {
-        copyright:    true, // (c) (C) → ©
-        plusminus:    true, // +- → ±
-        ellipsis:     true, // ... → … (also ?.... → ?.., !.... → !..)
-      },
+      typographer: true,
+      disable: ['replacements'],
       remarkableOptions: {
         typographer: true,
         linkify: true,
