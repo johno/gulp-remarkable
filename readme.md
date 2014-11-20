@@ -50,7 +50,6 @@ gulp.task('md', function() {
   return gulp.src('file.md')
     .pipe(md({
       preset: 'full',
-      typographer: true,
       disable: ['replacements'],
       remarkableOptions: {
         typographer: true,
