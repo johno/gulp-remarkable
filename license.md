@@ -1,4 +1,4 @@
-Copyright (c) 2014 [John Otander][http://johnotander.com], [contributors](https://github.com/johnotander/gulp-remarkable/graphs/contributors).  
+Copyright (c) 2014-2015 [John Otander][http://johnotander.com], [contributors](https://github.com/johnotander/gulp-remarkable/graphs/contributors).  
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
