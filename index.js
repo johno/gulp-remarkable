@@ -14,7 +14,7 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var gulpRemarkable = require('./lib/gulp-remarkable');
 
-module.exports = function remarkable(options) {
+module.exports = function remarkable(options, fnConfigureMd) {
   return through.obj(function(file, encoding, callback) {
     if (file.isNull()) {
       callback(null, file);
@@ -27,6 +27,10 @@ module.exports = function remarkable(options) {
     
     try {
       var md = gulpRemarkable(options)
+
+      if (fnConfigureMd) {
+        fnConfigureMd(md)
+      }
 
       file.contents = new Buffer(md.render(file.contents.toString()));
       
