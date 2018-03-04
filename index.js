@@ -11,7 +11,8 @@
  * Module dependencies.
  */
 var through = require('through2');
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
+var replaceExtension = require('replace-ext');
 var gulpRemarkable = require('./lib/gulp-remarkable');
 
 module.exports = function remarkable(options) {
@@ -21,7 +22,7 @@ module.exports = function remarkable(options) {
     }
 
     if (file.isStream()) {
-      callback(new gutil.PluginError('gulp-remarkable', 'Streaming not supported'));
+      callback(new PluginError('gulp-remarkable', 'Streaming not supported'));
       return;
     }
     
@@ -30,10 +31,10 @@ module.exports = function remarkable(options) {
 
       file.contents = new Buffer(md.render(file.contents.toString()));
       
-      file.path = gutil.replaceExtension(file.path, '.html');
+      file.path = replaceExtension(file.path, '.html');
       this.push(file);
     } catch (err) {
-      this.emit('error', new gutil.PluginError('gulp-remarkable', err, {fileName: file.path}));
+      this.emit('error', new PluginError('gulp-remarkable', err, {fileName: file.path}));
     }
 
     callback();

@@ -11,7 +11,7 @@
  * Module dependencies.
  */
 var assert = require('assert');
-var gutil = require('gulp-util');
+var Vinyl = require('vinyl');
 var remarkableStream = require('../index');
 
 describe('gulp-remarkable should convert md to html', function() {
@@ -26,7 +26,7 @@ describe('gulp-remarkable should convert md to html', function() {
     });
     mdStream.on('end', done);
 
-    mdStream.write(new gutil.File({
+    mdStream.write(new Vinyl({
       path: 'default.md',
       contents: new Buffer(actual)
     }));
@@ -52,7 +52,7 @@ describe('gulp-remarkable should convert md to html', function() {
     });
     mdStream.on('end', done);
 
-    mdStream.write(new gutil.File({
+    mdStream.write(new Vinyl({
       path: 'typographer.md',
       contents: new Buffer(actual)
     }));
@@ -76,7 +76,7 @@ describe('gulp-remarkable should convert md to html', function() {
     });
     mdStream.on('end', done);
 
-    mdStream.write(new gutil.File({
+    mdStream.write(new Vinyl({
       path: 'typographer.md',
       contents: new Buffer(actual)
     }));
