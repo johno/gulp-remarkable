@@ -30,21 +30,21 @@
     "md"
   ],
   "dependencies": {
-    "highlight.js": ">=8.3.0",
+    "highlight.js": ">=9.12.0",
     "plugin-error": "1.0.1",
-    "remarkable": "^1.4.1",
+    "remarkable": "^1.7.1",
     "replace-ext": "1.0.0",
-    "through2": ">=0.6.3"
+    "through2": ">=2.0.3"
   },
   "devDependencies": {
     "coveralls": "*",
-    "gulp": ">=3.8.10",
-    "gulp-jshint": ">=1.9.0",
-    "gulp-spawn-mocha": ">=0.5.1",
+    "gulp": ">=3.9.1",
+    "gulp-jshint": ">=2.1.0",
+    "gulp-spawn-mocha": ">=5.0.1",
     "istanbul": "*",
     "jshint": "*",
-    "jshint-stylish": ">=1.0.0",
-    "mocha": ">=2",
+    "jshint-stylish": ">=2.2.1",
+    "mocha": ">=5",
     "mocha-lcov-reporter": "*",
     "vinyl": "2.1.0"
   },
