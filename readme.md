@@ -64,6 +64,28 @@ gulp.task('md', function() {
 gulp.task('default', ['md']);
 ```
 
+**Using Plugins**
+
+gulp-remarkable accepts one or two parameters: options and an optional function that accepts gulpRemarkable object.
+
+```js
+var gulp = require('gulp')
+var md = require('gulp-remarkable')
+
+return gulp.src(globMarkdown)
+    .pipe(md(opts, (m=>{
+      m.renderer.rules.heading_open = headingAnchorRendererPlugin
+    })))
+
+function headingAnchorRendererPlugin(tokens, idx ) {
+  if (tokens[idx+1].type == 'inline') {
+    let heading_anchor = slug(tokens[idx+1].content, {lower: true})
+    return '<h' + tokens[idx].hLevel + ' id="' + heading_anchor + '">';
+  }
+  return '<h' + tokens[idx].hLevel + '>';
+}
+```
+
 ## Run tests
 
 ```
@@ -86,6 +108,8 @@ $ npm test
 + [npmjs/tunnckoCore][author2-npmjs]
 + [more ...][author2-more]
 
+**Evans Jahja**
++ [github/Charon77][contrib-github]
 
 ## License [![MIT license][license-img]][license-url]
 
@@ -148,6 +172,8 @@ Released under the [`MIT`][license-url] license.
 [author2-website]: http://www.whistle-bg.tk
 [author2-npmjs]: https://npmjs.org/~tunnckocore
 [author2-more]: http://j.mp/1stW47C
+
+[contrib-github]: https://github.com/Charon77
 
 [cobody-url]: https://github.com/tj/co-body
 [mocha-url]: https://github.com/tj/mocha
