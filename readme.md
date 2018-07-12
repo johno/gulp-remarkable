@@ -37,7 +37,7 @@ gulp.task('md', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['md']);
+gulp.task('default', gulp.series(['md']));
 ```
 
 **Extended Example**
@@ -61,7 +61,7 @@ gulp.task('md', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['md']);
+gulp.task('default', gulp.series(['md']));
 ```
 
 **Using Plugins**
